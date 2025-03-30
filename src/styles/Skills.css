@@ -1,0 +1,27 @@
+.skills-section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+}
+
+.skill-item {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}
+
+.skill-logo {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}

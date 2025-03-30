@@ -1,0 +1,26 @@
+.neon-svg {
+    position: absolute;
+    width: 1400px;
+    height: auto;
+    z-index: 999;
+    overflow: visible;
+    pointer-events: none;
+  }
+  
+  .neon-path {
+    fill: none;
+    stroke: var(--accent-color);
+    stroke-width: 3;
+    filter: drop-shadow(0 0 10px var(--accent-color)) 
+            drop-shadow(0 0 20px var(--accent-color));
+  }
+  
+  .neon-bead {
+    filter: drop-shadow(0 0 10px var(--accent-color));
+    pointer-events: all;
+  }
+
+  .electricity-effect {
+    pointer-events: none;
+    opacity: 1;
+  }

@@ -1,0 +1,100 @@
+.footer {
+    position: fixed;
+    bottom: -5px;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  
+  .footer-light {
+    background: transparent;
+  }
+
+  .footer-grass {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: repeat-x;
+    background-size: 50% 160%;
+    background-position:bottom;
+  }
+
+  .footer-flowers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/footer/flowers.png');
+    z-index: 1;
+    opacity: 0.8;
+    background-size: 50% 100%;
+    background-position: bottom;
+    background-repeat:no-repeat;
+  }
+  
+  .footer-grass {
+    background-image: url('/footer/grass.png');
+    z-index: 2;
+    opacity: 1;
+  }
+
+  @keyframes waveAnimation {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(5) rotate(1deg); }
+    50% { transform: translateX(-5px) rotate(-1deg); }
+    75% { transform: translateX(5px) rotate(1deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+  }  
+
+  .wave {
+    animation: waveAnimation 3s ease-in-out;
+  }
+
+  .footer-dark {
+    background: transparent;
+  }
+  
+  .footer-city {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('/footer/cityskyline.png');
+    background-repeat: repeat-x;
+    background-size: 50% 160%;
+    background-position: bottom;
+    z-index: 1;
+  }
+
+  .footer-twinkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .twinkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #fff;
+    border-radius: 50%;
+    animation: twinkleAnimation 2s ease-in-out;
+  }
+  
+  @keyframes twinkleAnimation {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @media(max-width: 768px) {
+    .footer-city,
+    .footer-grass,
+    .footer-flowers {
+        width: 250%;
+    }
+  }
+  

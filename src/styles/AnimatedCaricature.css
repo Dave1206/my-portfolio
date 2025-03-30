@@ -1,0 +1,36 @@
+.caricature-container {
+    position: relative;
+    align-self: center;
+    min-height: 250px;
+    max-height: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    margin: 0 auto;
+    user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    border: solid 4px var(--accent-color);
+    border-radius: 25%;
+    margin-left: 45px;
+    animation: fadeInLeft 2s ease-in-out, pulseGlow 10s ease-in-out infinite;
+    border: solid 3px var(--h1-color);
+    z-index: 5;
+  }
+  
+  /* Base layer should be full size of container */
+  .caricature-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
+  }
+
+  @media(max-width: 768px) {
+    .caricature-container{
+      margin: 0;
+    }
+  }
+  

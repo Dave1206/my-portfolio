@@ -1,0 +1,32 @@
+/* index.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  min-width: 100vw;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Light & Dark Themes */
+.light {
+  --bg-color: #fff;
+  --text-color: #444;
+  --accent-color: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+  --h1-color: #333;
+  --h3-color: #777;
+}
+
+.dark {
+  --bg-color: #040118;
+  --text-color: #999;
+  --accent-color: #bb86fc;
+  --h1-color: #fff;
+  --h3-color: #555;
+}

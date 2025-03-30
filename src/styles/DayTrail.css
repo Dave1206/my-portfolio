@@ -1,0 +1,19 @@
+.day-svg {
+    position: absolute;
+    width: 1400px;
+    height: auto;
+    z-index: 999;
+    overflow: visible;
+    pointer-events: none;
+  }
+  
+  .day-path {
+    fill: none;
+    stroke-width: 3;
+  }
+
+  .day-bead{
+    pointer-events: all;
+  }
+
+  

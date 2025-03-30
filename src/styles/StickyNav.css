@@ -1,0 +1,26 @@
+/* StickyNav.css */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    background: var(--accent-color);
+    color: var(--h1-color);
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  
+  .sticky-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .sticky-nav a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
+  }
+  

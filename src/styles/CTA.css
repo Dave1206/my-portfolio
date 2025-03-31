@@ -121,4 +121,8 @@
         width: fit-content;
       }
 
+      .contact-form {
+        margin: 0;
+        min-width: 70vw;
+      }
   }

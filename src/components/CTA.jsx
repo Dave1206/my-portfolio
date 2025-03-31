@@ -17,9 +17,7 @@ const CTASection = () => {
             </p>
             <form
                 name="contact"
-                method="POST"
-                data-netlify="true"
-                data-netlify-honeypot="bot-field"
+                netlify
                 className="contact-form"
             >
                 {/* This hidden input is required by Netlify forms */}

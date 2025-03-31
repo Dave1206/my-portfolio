@@ -46,9 +46,18 @@ const Footer = ({ theme }) => {
         }
     }, [theme]);
 
+    const currentYear = new Date().getFullYear();
+    const footerContent = (
+        <div className='footer-content'>
+            <p>&copy; {currentYear} David Waddell.</p>
+            <p>david.n.waddell@gmail.com</p>
+        </div>
+    )
+
     if (theme === 'light') {
         return (
             <footer className="footer footer-light">
+                {footerContent}
                 <div className={`yellow-flower ${animateWave ? 'wave' : 
                     animateWaveTwo ? 'wave2' : ''}`}></div>
                 <div className={`blue-flower ${animateWave ? 'wave' : 
@@ -59,6 +68,7 @@ const Footer = ({ theme }) => {
     } else {
         return (
             <footer className="footer footer-dark">
+                {footerContent}
                 <div className="footer-city"></div>
                 <div className="footer-twinkles">
                     {twinkles.map(twinkle => (

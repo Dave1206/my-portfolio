@@ -27,10 +27,10 @@ body {
 
 .dark {
   --bg-color: #040118;
-  --text-color: #999;
+  --text-color: #cccccc;
   --accent-color: #bb86fc;
   --accent-hover: #bb86fcd0;
   --h1-color: #fff;
-  --h3-color: #555;
+  --h3-color: #777;
   --content-bg: #04011800;
 }

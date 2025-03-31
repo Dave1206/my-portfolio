@@ -17,7 +17,7 @@ const CTASection = () => {
             </p>
             <form
                 name="contact"
-                netlify
+                netlify="true"
                 className="contact-form"
             >
                 {/* This hidden input is required by Netlify forms */}

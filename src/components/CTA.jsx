@@ -22,6 +22,7 @@ const CTASection = () => {
                 data-netlify-honeypot='bot-field'
                 className="contact-form"
             >
+                <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">
                     <label>
                         Don’t fill this out: <input name="bot-field" />

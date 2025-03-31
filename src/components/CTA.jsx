@@ -21,7 +21,6 @@ const CTASection = () => {
                 data-netlify='true'
                 data-netlify-honeypot='bot-field'
                 className="contact-form"
-                hidden
             >
                 <p className="hidden">
                     <label>

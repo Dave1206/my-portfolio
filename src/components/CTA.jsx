@@ -18,8 +18,10 @@ const CTASection = () => {
             <form
                 name="contact"
                 method="POST"
-                netlify
+                data-netlify='true'
+                data-netlify-honeypot='bot-field'
                 className="contact-form"
+                hidden
             >
                 <input type="hidden" name="form-name" value="contact" />
                 <p className="hidden">

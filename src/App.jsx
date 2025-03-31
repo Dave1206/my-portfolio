@@ -1,8 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import Hero from './components/Hero';
 import StickyNav from './components/StickyNav';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import CTA from './components/CTA';
+import StickyCTA from './components/StickyCTA';
 import ThemeToggle from './components/ThemeToggle';
 import NeonTrail from './components/NeonTrail';
 import DayTrail from './components/DayTrail';
@@ -19,15 +22,27 @@ function App() {
   }, [theme]);
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+    setIsMobile(mediaQuery.matches);
+
+    const handleMediaChange = (event) => {
+      setIsMobile(event.matches);
     };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMobile]);
+
+    mediaQuery.addEventListener('change', handleMediaChange);
+
+    return () => {
+      mediaQuery.removeEventListener('change', handleMediaChange);
+    };
+  }, []);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
+  };
+
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
   };
 
   return (
@@ -36,19 +51,48 @@ function App() {
       <div id="content" className={`app`}>
         {!isMobile && theme === 'dark' && <NeonTrail />}
         {!isMobile && theme === 'light' && <DayTrail />}
-        <StickyNav />
+        <StickyNav isMobile={isMobile} />
+        <StickyCTA />
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
         <main>
-          <section className="hero">
-            <Hero />
-          </section>
-          <section className="skills-section">
+          <motion.section
+            className="hero"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <Hero theme={theme} />
+          </motion.section>
+          <motion.section
+            className="skills"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <Skills theme={theme} />
-          </section>
-          <section className="projects" id="projects">
+          </motion.section>
+          <motion.section
+            className="projects"
+            id="projects"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
             <Projects />
-          </section>
-          
+          </motion.section>
+          <motion.section
+            className="cta-section"
+            id="CTA"
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+          >
+              <CTA />
+          </motion.section>
         </main>
         <Footer theme={theme} />
       </div>

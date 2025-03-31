@@ -1,11 +1,4 @@
-.projects-section {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    text-align: center;
-  }
-  
-  .projects-section h2 {
+  .projects h2 {
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
@@ -14,7 +7,6 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    margin: 50px;
   }  
   
   .project-item {
@@ -23,6 +15,7 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 600px;
+    max-width: 30vw;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
@@ -106,6 +99,6 @@
         flex-direction: column;
     }
     .project-item{
-        width: 300px;
+        max-width: 80vw;
     }
   }

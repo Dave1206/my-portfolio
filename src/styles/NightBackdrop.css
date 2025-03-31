@@ -1,0 +1,64 @@
+.hero-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90vh;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+  }
+  
+  .static-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .static-stars .star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 2px;
+    height: 2px;
+    opacity: 0.8;
+  }
+  
+  /* Twinkling Stars */
+  .twinkling-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .twinkling-stars .twinkle-star {
+    position: absolute;
+    background: #fff;
+    border-radius: 50%;
+    width: 4px;
+    height: 4px;
+    animation: twinkle 3s ease-in-out infinite;
+    opacity: 0;
+  }
+  
+  /* Simple twinkle animation */
+  @keyframes twinkle {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+  }
+  
+  /* Meteor styling */
+  .meteor {
+    position: absolute;
+    /* The meteor will be animated using Framer Motion.
+       Its position and rotation keyframes are set in the component's variants. */
+    width: 80px; /* adjust based on your asset */
+    height: auto;
+    z-index: 2;
+  }
+  

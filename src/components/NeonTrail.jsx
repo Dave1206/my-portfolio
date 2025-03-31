@@ -48,6 +48,7 @@ function NeonTrail() {
   const dashOffset = useMotionValue(0);
   const [beadPos, setBeadPos] = useState({ x: 0, y: 0 });
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [pathD, setPathD] = useState('');
   const [sparks, setSparks] = useState([]);
   const { scrollYProgress } = useScroll();
@@ -55,25 +56,28 @@ function NeonTrail() {
   const lastSparkTimeRef = useRef(0);
   const THROTTLE_MS = 100;
 
-  const calculatePathD = (width) => {
-    const minMargin = 50;
+  const calculatePathD = (width, height) => {
+    const svgHeight = (height * .8) * 4;
+    const minMargin = 0.05 * width;
     const leftX = Math.max(minMargin, 0.01 * width);
-    const rightX = Math.min(width - minMargin, 0.65 * width);
-    const y1 = 50;
-    const y2 = 700;
-    const y3 = 1350;
-    const y4 = 1600;
-    return `M${leftX},${y1} L${leftX},${y2} L${rightX},${y2} L${rightX},${y3} L${leftX},${y3} L${leftX},${y4}`;
+    const rightX = Math.min(width - minMargin, 0.99 * width);
+    const y1 = 25;
+    const y2 = Math.min(svgHeight, .25 * svgHeight);
+    const y3 = Math.min(svgHeight, .5 * svgHeight);
+    const y4 = Math.min(svgHeight - minMargin, .75 * svgHeight);
+    const y5 = Math.min(svgHeight - minMargin, 1 * svgHeight);
+    return `M${leftX},${y1} L${leftX},${y2} L${rightX},${y2} L${rightX},${y3} L${leftX},${y3} L${leftX},${y4} L${rightX},${y4} L${rightX},${y5}`;
   };
 
   useEffect(() => {
-    const newD = calculatePathD(windowWidth);
+    const newD = calculatePathD(windowWidth, windowHeight);
     setPathD(newD);
-  }, [windowWidth]);
+  }, [windowWidth, windowHeight]);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -116,14 +120,12 @@ function NeonTrail() {
       if (now - lastSparkTimeRef.current < THROTTLE_MS) return;
       lastSparkTimeRef.current = now;
       
-      // Generate a new spark object.
       const newSpark = {
         id: now,
         zigzagPath: generateZigzagPath(),
       };
       setSparks((prev) => [...prev, newSpark]);
       
-      // Remove spark after 1 second (after animation finishes).
       setTimeout(() => {
         setSparks((prev) => prev.filter((spark) => spark.id !== newSpark.id));
       }, 1000);
@@ -134,7 +136,7 @@ function NeonTrail() {
   }, []);
 
   return (
-    <svg className="neon-svg" viewBox="0 0 1000 1900" preserveAspectRatio="none">
+    <svg className="neon-svg" viewBox={`0 0 ${windowWidth} ${(windowHeight * .8) * 4}`} preserveAspectRatio="none">
       <motion.path
         ref={pathRef}
         d={pathD}
@@ -153,7 +155,7 @@ function NeonTrail() {
           style={{ cursor: 'pointer' }}
           filter="url(#neonGlow)"
         />
-        {/* Electricity effect: Render multiple sparks */}
+
         <g className="electricity-effect">
           {sparks.map((spark) => (
             <Spark

@@ -5,8 +5,9 @@
     background: var(--accent-color);
     color: var(--h1-color);
     display: flex;
-    justify-content: center;
-    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem 12rem 0 3rem;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 0 20px var(--accent-color);
@@ -23,4 +24,14 @@
     color: inherit;
     font-weight: bold;
   }
+
+  .logo {
+    width: 200px;
+  }
   
+  @media(max-width: 768px){
+     .sticky-nav{
+      padding: 1rem;
+      justify-content: center;
+     }
+  }

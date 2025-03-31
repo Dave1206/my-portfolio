@@ -45,16 +45,24 @@ const containerVariants = {
     },
   };
 
-function Skills({ theme }) {
+function Skills() {
   return (
-    <section className="skills-section">
-      <h2>My Tech Stack</h2>
+    <>
+      <div className='skills-header'>
+        <h2>My Tech Stack</h2>
+        <blockquote>
+          <q>Everybody should learn how to program a computer,
+            because it teaches you how to think. </q>
+          <cite> - Steve Jobs</cite>
+        </blockquote>
+        <p>I am committed to learning new technologies that are best for the task at hand.</p>
+      </div>
       <motion.div
         className="skills-list"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.9 }}
+        viewport={{ once: false, amount: 0.2 }}
       >
          {skills.map((skill) => (
           <motion.div
@@ -66,7 +74,7 @@ function Skills({ theme }) {
           </motion.div>
         ))}
       </motion.div>
-    </section>
+    </>
   );
 }
 

@@ -19,14 +19,18 @@ body {
   --bg-color: #fff;
   --text-color: #444;
   --accent-color: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+  --accent-hover: linear-gradient(90deg, #ffd900ef 0%, #ffa600f1 100%);
   --h1-color: #333;
   --h3-color: #777;
+  --content-bg: #ffffff54;
 }
 
 .dark {
   --bg-color: #040118;
   --text-color: #999;
   --accent-color: #bb86fc;
+  --accent-hover: #bb86fcd0;
   --h1-color: #fff;
   --h3-color: #555;
+  --content-bg: #04011800;
 }

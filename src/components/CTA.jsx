@@ -18,6 +18,7 @@ const CTASection = () => {
             <form
                 name="contact"
                 method="POST"
+                action="/"
                 data-netlify='true'
                 data-netlify-honeypot='bot-field'
                 className="contact-form"

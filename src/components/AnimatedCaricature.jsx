@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import '../styles/AnimatedCaricature.css';
 
 const AnimatedCaricature = () => {
-  const containerRef = useRef(null);
-
   const [eyeOffset, setEyeOffset] = useState({ x: 0, y: 0 });
   const [eyebrowTransform, setEyebrowTransform] = useState({
     left: { rotation: 0, yOffset: 0 },
@@ -89,14 +87,12 @@ const AnimatedCaricature = () => {
 
   return (
     <div className="caricature-container">
-      {/* Base layer (static) */}
       <img
         src="/animatedpfp/baselayer.png"
         alt="Caricature Base"
         className="caricature-base"
       />
       
-      {/* Eyes layer (animated) */}
       <motion.img
         src="/animatedpfp/lefteye.png"
         alt="Left Eye"
@@ -124,7 +120,6 @@ const AnimatedCaricature = () => {
           }}
       />
       
-      {/* Eyebrows layer (animated) */}
       <motion.img
         src="/animatedpfp/leftbrow.png"
         alt="Left Eyebrow"

@@ -12,8 +12,6 @@ function DayTrail() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
   const [pathD, setPathD] = useState('');
-  
-  // These states control the butterfly's orientation and visibility.
   const [showButterfly, setShowButterfly] = useState(false);
 
   const scrollTimeoutRef = useRef(null);
@@ -123,7 +121,6 @@ function DayTrail() {
         }}
       />
 
-      {/* Group for bead and butterfly: positioned at beadPos */}
       <g transform={`translate(${beadPos.x}, ${beadPos.y})`}>
         <motion.circle
           cx="0"

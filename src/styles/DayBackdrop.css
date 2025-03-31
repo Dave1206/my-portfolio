@@ -10,7 +10,6 @@
     z-index: 1;
   }
   
-  /* Sky blue gradient background */
   .sky-gradient {
     position: absolute;
     top: 0;
@@ -21,7 +20,6 @@
     z-index: 1;
   }
   
-  /* Static Clouds */
   .static-clouds {
     position: absolute;
     top: 0;
@@ -33,12 +31,11 @@
   
   .static-cloud {
     position: absolute;
-    width: 250px; /* Adjust as needed */
+    width: 250px;
     height: auto;
     opacity: 0.4;
   }
   
-  /* Animated Clouds */
   .animated-clouds {
     position: absolute;
     top: 0;
@@ -50,7 +47,7 @@
   
   .animated-cloud {
     position: absolute;
-    width: 250px; /* Adjust as needed */
+    width: 250px;
     height: auto;
     opacity: .4;
   }

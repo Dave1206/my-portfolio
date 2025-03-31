@@ -15,7 +15,6 @@
     z-index: 5;
   }
   
-  /* Base layer should be full size of container */
   .caricature-base {
     position: absolute;
     top: 0;

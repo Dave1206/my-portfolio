@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence, useMotionValue } from 'framer-motion';
+import React from 'react';
+import { motion, AnimatePresence} from 'framer-motion';
 
 const Butterfly = ({ show }) => {
   const containerVariants = {
@@ -33,7 +33,6 @@ const Butterfly = ({ show }) => {
           style={{ originX: '50%', originY: '50%' }}
         >
             <motion.g >
-              {/* Butterfly Body (static image) */}
               <motion.image
                 href="/butterfly/butterflyBody.png"
                 x="-20"
@@ -44,7 +43,6 @@ const Butterfly = ({ show }) => {
                   pointerEvents: 'none'
                 }}
               />
-              {/* Butterfly Wings (animated with flapping) */}
               <motion.image
                 href="/butterfly/butterflyWings.png"
                 x="-20"

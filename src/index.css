@@ -1,4 +1,3 @@
-/* index.css */
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,6 @@ body {
   line-height: 1.6;
 }
 
-/* Light & Dark Themes */
 .light {
   --bg-color: #fff;
   --text-color: #444;

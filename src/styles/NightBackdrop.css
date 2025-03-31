@@ -45,19 +45,15 @@
     opacity: 0;
   }
   
-  /* Simple twinkle animation */
   @keyframes twinkle {
     0% { opacity: 0; }
     50% { opacity: 0.8; }
     100% { opacity: 0; }
   }
   
-  /* Meteor styling */
   .meteor {
     position: absolute;
-    /* The meteor will be animated using Framer Motion.
-       Its position and rotation keyframes are set in the component's variants. */
-    width: 80px; /* adjust based on your asset */
+    width: 80px;
     height: auto;
     z-index: 2;
   }

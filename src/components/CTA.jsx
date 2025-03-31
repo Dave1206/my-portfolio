@@ -21,9 +21,7 @@ const CTASection = () => {
                 netlify
                 className="contact-form"
             >
-                {/* This hidden input is required by Netlify forms */}
                 <input type="hidden" name="form-name" value="contact" />
-                {/* Honeypot field to deter bots */}
                 <p className="hidden">
                     <label>
                         Don’t fill this out: <input name="bot-field" />

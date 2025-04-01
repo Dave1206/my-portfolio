@@ -1,13 +1,37 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>David Waddell</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/ico" href="/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>David Waddell</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <form name="contact" method="POST" action="/thank-you" data-netlify="true" data-netlify-honeypot="bot-field" class="contact-form" style="display:none;">
+    <input type="hidden" name="form-name" value="contact" />
+    <p class="hidden">
+      <label>Don’t fill this out: <input name="bot-field" /></label>
+    </p>
+    <p>
+      <label for="name">Name</label>
+      <input type="text" name="name" id="name" required />
+    </p>
+    <p>
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email" required />
+    </p>
+    <p>
+      <label for="message">Message</label>
+      <textarea name="message" id="message" rows="4" required></textarea>
+    </p>
+    <p>
+      <button type="submit" class="cta-btn">Send Message</button>
+    </p>
+  </form>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Hero from './components/Hero';
 import StickyNav from './components/StickyNav';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import CTA from './components/CTA';
+import ThankYou from './components/ThankYou';
 import StickyCTA from './components/StickyCTA';
 import ThemeToggle from './components/ThemeToggle';
 import NeonTrail from './components/NeonTrail';
@@ -46,57 +48,67 @@ function App() {
   };
 
   return (
-    <>
-
-      <div id="content" className={`app`}>
-        {!isMobile && theme === 'dark' && <NeonTrail />}
-        {!isMobile && theme === 'light' && <DayTrail />}
-        <StickyNav isMobile={isMobile} />
-        <StickyCTA />
-        <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
-        <main>
-          <motion.section
-            className="hero"
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <Hero theme={theme} />
-          </motion.section>
-          <motion.section
-            className="skills"
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <Skills theme={theme} />
-          </motion.section>
-          <motion.section
-            className="projects"
-            id="projects"
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-            <Projects />
-          </motion.section>
-          <motion.section
-            className="cta-section"
-            id="CTA"
-            variants={sectionVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
-          >
-              <CTA />
-          </motion.section>
-        </main>
-        <Footer theme={theme} />
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route 
+          path="/" 
+          element={
+            <>
+              <div id="content" className={`app`}>
+                {!isMobile && theme === 'dark' && <NeonTrail />}
+                {!isMobile && theme === 'light' && <DayTrail />}
+                <StickyNav isMobile={isMobile} />
+                <StickyCTA />
+                <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+                <main>
+                  <motion.section
+                    className="hero"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                  >
+                    <Hero theme={theme} />
+                  </motion.section>
+                  <motion.section
+                    className="skills"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
+                    <Skills theme={theme} />
+                  </motion.section>
+                  <motion.section
+                    className="projects"
+                    id="projects"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
+                    <Projects />
+                  </motion.section>
+                  <motion.section
+                    className="cta-section"
+                    id="CTA"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, amount: 0.5 }}
+                  >
+                      <CTA />
+                  </motion.section>
+                </main>
+                <Footer theme={theme} />
+              </div>
+            </>
+          } 
+        />
+        
+        <Route path="/thank-you" element={<><StickyNav isMobile={isMobile} /> <ThankYou /></>} />
+      </Routes>
+    </Router>
   );
 }
 

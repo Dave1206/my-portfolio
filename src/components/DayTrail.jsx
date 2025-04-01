@@ -10,38 +10,59 @@ function DayTrail() {
   const [beadPos, setBeadPos] = useState({ x: 0, y: 0 });
   const { scrollYProgress } = useScroll();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [appHeight, setAppHeight] = useState(window.innerHeight);
   const [pathD, setPathD] = useState('');
   const [showButterfly, setShowButterfly] = useState(false);
 
   const scrollTimeoutRef = useRef(null);
 
-  const calculatePathD = (width, height) => {
-    const svgHeight = (height * .8) * 4;
+  const calculatePathD = (width) => {
     const minMargin = 0.05 * width;
     const leftX = Math.max(minMargin, 0.01 * width);
     const rightX = Math.min(width - minMargin, 0.99 * width);
+
+    const heroEl = document.querySelector('.hero');
+    const skillsEl = document.querySelector('.skills');
+    const projectsEl = document.querySelector('.projects');
+    const ctaEl = document.querySelector('.cta-section');
+  
+    const heroHeight = heroEl ? heroEl.offsetHeight : 0;
+    const skillsHeight = skillsEl ? skillsEl.offsetHeight : 0;
+    const projectsHeight = projectsEl ? projectsEl.offsetHeight : 0;
+    const ctaHeight = ctaEl ? ctaEl.offsetHeight : 0;
+  
     const y1 = 25;
-    const y2 = Math.min(svgHeight, .25 * svgHeight);
-    const y3 = Math.min(svgHeight, .5 * svgHeight);
-    const y4 = Math.min(svgHeight - minMargin, .75 * svgHeight);
-    const y5 = Math.min(svgHeight - minMargin, 1 * svgHeight);
+    const y2 = y1 + heroHeight + 56;
+    const y3 = y2 + skillsHeight;
+    const y4 = y3 + projectsHeight;
+    const y5 = y4 + ctaHeight * .6;
+  
     return `M${leftX},${y1} L${leftX},${y2} L${rightX},${y2} L${rightX},${y3} L${leftX},${y3} L${leftX},${y4} L${rightX},${y4} L${rightX},${y5}`;
   };
 
   useEffect(() => {
-    const newD = calculatePathD(windowWidth, windowHeight);
+    const newD = calculatePathD(windowWidth);
     setPathD(newD);
-  }, [windowWidth, windowHeight]);
+  }, [windowWidth, appHeight]);
 
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      setWindowHeight(window.innerHeight);
+      const element = document.querySelector('.app');
+      if (element) {
+        setAppHeight(element.offsetHeight);
+      }
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+    useEffect(() => {
+      const element = document.querySelector('.app');
+      if (element) {
+        setAppHeight(element.offsetHeight);
+      }
+    }, []);  
 
   useEffect(() => {
     if (pathRef.current) {
@@ -55,13 +76,11 @@ function DayTrail() {
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
       if (pathLength) {
-        const accelerate = Math.min(v * 1, 1);
-        dashOffset.set(pathLength * (1 - accelerate));
+        const offset = (1 - v) * pathLength - v * 400;
+        dashOffset.set(offset);
       }
     });
-    return () => {
-      unsubscribe();
-    };
+    return () => unsubscribe();
   }, [pathLength, scrollYProgress, dashOffset]);
 
   useEffect(() => {
@@ -92,7 +111,7 @@ function DayTrail() {
   }, [dashOffset, pathLength]);
 
   return (
-    <svg className="day-svg" viewBox={`0 0 ${windowWidth} ${(windowHeight * .8) * 4}`} preserveAspectRatio="none">
+    <svg className="day-svg" viewBox={`0 0 ${windowWidth} ${appHeight}`} preserveAspectRatio="none">
       <defs>
         <linearGradient id="dayGradient" x1="0" y1="0" x2="1" y2="0">
           <stop offset="0%" stopColor="#FFD700" />   {/* Gold */}

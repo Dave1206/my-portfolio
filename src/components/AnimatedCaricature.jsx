@@ -114,7 +114,7 @@ const AnimatedCaricature = () => {
             transform: `translate(${eyeOffset.x}px, ${eyeOffset.y}px)`,
             position: 'absolute',
             width: '20%',
-            top: '37%',
+            top: '36.5%',
             left: '19%',
             zIndex: '1',
           }}

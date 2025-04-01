@@ -30,16 +30,16 @@ const CTASection = () => {
                     </label>
                 </p>
                 <p>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" name="name" id="name" required />
+                    <label htmlFor="name">Name
+                    <input type="text" name="name" id="name" required /></label>
                 </p>
                 <p>
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" required />
+                    <label htmlFor="email">Email
+                    <input type="email" name="email" id="email" required /></label>
                 </p>
                 <p>
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" id="message" rows="4" required></textarea>
+                    <label htmlFor="message">Message
+                    <textarea name="message" id="message" rows="4" required></textarea></label>
                 </p>
                 <p>
                     <button type="submit" className="cta-btn">Send Message</button>

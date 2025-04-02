@@ -1,0 +1,161 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.resume-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.resume-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.resume-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.resume-header h3 {
+    font-size: 1.5rem;
+    color: #777;
+}
+
+.resume-header p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.resume-section {
+    padding: 0;
+    margin: 0 0 30px 0;
+    text-align: left;
+    min-height: fit-content;
+}
+
+.resume-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    margin: 0 0 10px;
+    color: #444;
+    text-align: left;
+    border-bottom: 2px solid #FFA500;
+    padding: 0 0 5px;
+}
+
+.resume-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+    padding: 0;
+}
+
+.resume-columns {
+    display: flex;
+    gap: 40px;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.skills-list {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skills-list li {
+    padding: 5px 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    color: #555;
+}
+
+.resume-project-item {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.project-item h3 {
+    font-size: 1.8rem;
+    margin: 0 0 5px 0;
+    color: #333;
+    border-bottom: 1px solid #FFD700;
+    padding-bottom: 3px;
+}
+
+.project-item p {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #555;
+}
+
+.resume-section ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.resume-section li {
+    margin-bottom: 0.3rem;
+    line-height: 1.5;
+}
+
+.print-button {
+    display: block;
+    background: linear-gradient(90deg, #FFD700, #FFA500);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.print-button:hover {
+    background: linear-gradient(90deg, #ffd900ef, #ffa600f1);
+}
+
+@media print {
+    body {
+        background-color: white;
+    }
+
+    .resume-container {
+        max-width: 100%;
+        padding: 20px;
+        border: none;
+        box-shadow: none;
+    }
+
+    .resume-columns {
+        display: block;
+    }
+
+    .left-column, .right-column {
+        width: 100%;
+        padding: 0;
+    }
+
+    .print-button {
+        display: none;
+    }
+}

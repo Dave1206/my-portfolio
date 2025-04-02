@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import CTA from './components/CTA';
 import ThankYou from './components/ThankYou';
+import Resume from './components/Resume';
 import StickyCTA from './components/StickyCTA';
 import ThemeToggle from './components/ThemeToggle';
 import NeonTrail from './components/NeonTrail';
@@ -105,7 +106,7 @@ function App() {
             </>
           } 
         />
-        
+        <Route path="/resume" element={<><StickyNav isMobile={isMobile} /><Resume /></>} />
         <Route path="/thank-you" element={<><StickyNav isMobile={isMobile} /> <ThankYou /></>} />
       </Routes>
     </Router>

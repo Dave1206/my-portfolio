@@ -33,4 +33,8 @@
       padding: 1rem;
       justify-content: center;
      }
+
+     .sticky-nav ul{
+      gap: 1.2rem;
+     }
   }

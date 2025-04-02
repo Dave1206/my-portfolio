@@ -26,7 +26,7 @@ function Hero({ theme }) {
       </div>
       <div className="hero-content">
         <h3>Hi, my name is</h3>
-        <h1>David Waddell</h1>
+        <h1 className="hero-h1">David Waddell</h1>
         <h1 className="sub-h1">I am a full stack developer.</h1>
         <p>
           Driven by a passion for crafting elegant code,

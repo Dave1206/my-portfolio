@@ -75,7 +75,7 @@ function ProjectItem({ project }) {
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    GitHub
+                    View Code
                 </a>
             </div>
         </div>

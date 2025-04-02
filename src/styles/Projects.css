@@ -86,6 +86,10 @@
   }
   
   .github-btn {
+    background: #555;
+  }
+
+  .github-btn:hover {
     background: #333;
   }
   

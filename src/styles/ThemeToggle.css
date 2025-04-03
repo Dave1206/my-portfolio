@@ -13,6 +13,7 @@
   @media(max-width: 768px) {
     .theme-toggle{
       top: 2rem;
+      right: 1rem;
     }
     .toggle-icon {
       margin: 0;

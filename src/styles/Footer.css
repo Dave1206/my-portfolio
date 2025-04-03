@@ -130,6 +130,9 @@
   }
 
   @media(max-width: 768px) {
+    .footer{
+      max-width: 100vw; 
+    }
     .footer-city,
     .footer-grass,
     .footer-flowers {
@@ -141,7 +144,7 @@
     }
 
     .footer-content p{
-      font-size: .8rem;
+      font-size: .65rem;
     }
   }
   

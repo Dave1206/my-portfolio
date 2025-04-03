@@ -35,6 +35,7 @@
      }
 
      .sticky-nav ul{
-      gap: 1.2rem;
+      font-size: .8rem;
+      gap: 1rem;
      }
   }

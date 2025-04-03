@@ -1,48 +1,71 @@
+/* General Styling */
 body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
 }
 
-.resume-container {
-    max-width: 1200px;
+/* Resume Container */
+.resume-container, .print-version {
+    position: relative;
+    max-width: 1000px;
     margin: 40px auto;
-    padding: 40px;
+    padding: 50px;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.resume-header {
+/* Header Section */
+.resume-header, .print-resume-header {
     text-align: center;
     margin-bottom: 40px;
 }
 
-.resume-header h1 {
+.resume-header h1, .print-resume-header h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3.5rem;
     margin-bottom: 5px;
     color: #333;
 }
 
-.resume-header h3 {
+.resume-header h3, .print-resume-header h3 {
     font-size: 1.5rem;
     color: #777;
 }
 
-.resume-header p {
+.resume-header p, .print-resume-header p {
     font-size: 1rem;
     color: #555;
 }
 
-.resume-section {
+/* Columns Container */
+.resume-columns, .print-resume-columns {
+    display: flex;
+    gap: 40px;
+}
+
+/* Columns */
+.left-column, .right-column, .print-left-column, .print-right-column {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Section Styling */
+.resume-section, .print-resume-section {
     padding: 0;
     margin: 0 0 30px 0;
     text-align: left;
     min-height: fit-content;
 }
 
-.resume-section h2 {
+.resume-summary, .print-resume-summary {
+    margin: 50px auto 25px;
+    width: 50%;
+    font-style: italic;
+}
+
+.resume-section h2, .print-resume-section h2 {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     margin: 0 0 10px;
@@ -52,110 +75,151 @@ body {
     padding: 0 0 5px;
 }
 
-.resume-section p {
-    font-size: 1.1rem;
+.resume-section p, .print-resume-section p {
+    font-size: 1rem;
     line-height: 1.6;
     color: #555;
     margin: 0;
     padding: 0;
+    font-size: 1rem;
 }
 
-.resume-columns {
-    display: flex;
-    gap: 40px;
-}
-
-.left-column, .right-column {
-    flex: 1;
-    padding: 20px;
-}
-
-
-.skills-list {
-    display: block;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.skills-list li {
-    padding: 5px 0;
-    font-size: 1.1rem;
-    line-height: 1.6;
-    text-align: left;
+.resume-section ul, .print-resume-section ul {
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     color: #555;
+    font-size: 1rem;
 }
 
-.resume-project-item {
+.resume-section li {
+    line-height: 1.6;
+}
+
+/* Project Styling */
+.resume-project-item, .print-resume-project-item {
     padding: 0;
     margin: 0 0 20px 0;
 }
 
-.project-item h3 {
-    font-size: 1.8rem;
-    margin: 0 0 5px 0;
-    color: #333;
-    border-bottom: 1px solid #FFD700;
-    padding-bottom: 3px;
+/* PDF Buttons */
+.pdf-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    width: fit-content;
+    gap: 10px;
 }
 
-.project-item p {
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #555;
-}
-
-.resume-section ul {
-    padding-left: 20px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.resume-section li {
-    margin-bottom: 0.3rem;
-    line-height: 1.5;
+.pdf-buttons a{
+    text-decoration: none;
 }
 
 .print-button {
     display: block;
-    background: linear-gradient(90deg, #FFD700, #FFA500);
+    background: var(--accent-color);
+    min-width: 100px;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 5px;
+    border-radius: 12px;
     cursor: pointer;
     transition: background 0.3s;
-    margin: 20px auto 0;
+    margin: 0 auto;
     text-align: center;
+    font-size: 1rem;
 }
 
 .print-button:hover {
-    background: linear-gradient(90deg, #ffd900ef, #ffa600f1);
+    background: var(--accent-hover);
 }
 
+.print-version{
+    display: none;
+}
+
+/* Print Styling */
 @media print {
     body {
         background-color: white;
     }
 
-    .resume-container {
+    .resume-container, .print-version {
         max-width: 100%;
-        padding: 20px;
+        padding: 40px;
         border: none;
         box-shadow: none;
     }
 
-    .resume-columns {
-        display: block;
+    .resume-columns, .print-resume-columns {
+        display: flex;
+        flex-direction: row;
     }
 
-    .left-column, .right-column {
-        width: 100%;
-        padding: 0;
+    .left-column, .right-column, .print-left-column, .print-right-column {
+        flex: 1;
+        padding: 5px;
+    }
+
+    .resume-header, .print-resume-header {
+        margin-bottom: 20px;
+    }
+
+    .resume-section h2, .print-resume-section h2 {
+        margin-bottom: 5px;
+    }
+
+    .resume-section ul, .print-resume-section ul {
+        margin: 0;
+        padding: 0 0 0 15px;
+    }
+
+    .resume-section li, .print-resume-section li {
+        margin-bottom: 3px;
     }
 
     .print-button {
         display: none;
     }
+
+    @page {
+        size: letter;
+        margin: 0.5in;
+    }
+}
+
+/* Font Size Adjustments for Print Version Only */
+.print-version h1 {
+    font-size: 48px;
+    margin-top: 0;
+}
+
+.print-version h2 {
+    font-size: 16px;
+}
+
+.print-version h3 {
+    font-size: 14px;
+}
+
+.print-version p, .print-version li {
+    font-size: 12px;
+}
+
+.print-resume-columns{
+    gap: 50px;
+    margin: 0 30px;
+}
+
+.print-left-column, .print-right-column{
+    padding: 0px;
+}
+
+.print-resume-section p {
+    line-height: 1.3;
+}
+
+.print-resume-section li {
+    line-height: 1.3;
 }

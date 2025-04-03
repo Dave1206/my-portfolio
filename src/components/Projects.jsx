@@ -6,20 +6,40 @@ const projectsData = [
     {
         title: "Memory App",
         screenshots: [
-            "/images/project1-1.png",
-            "/images/project1-2.png",
-            "/images/project1-3.png"
+            "/projects/memoryappss1.png",
+            "/projects/memoryappss2.png",
+            "/projects/memoryappss3.png"
         ],
-        overviewLink: "/projects/project-one",
-        githubLink: "https://github.com/yourusername/project-one",
+        description: `
+            A social networking application for sharing memories, featuring real-time updates, instant messaging, and live feed updates.
+        `,
+        features: [
+            `User authentication with bcrypt and email verification via nodemailer.`,
+            `Real-time notifications and messaging using WebSocket.`,
+            `Moderation tools including user bans and media approval.`,
+            `Media uploads and processing with FFmpeg, Multer, and Sharp.`,
+            `Data recommendations based on metadata tracking, including location.`,
+        ],
+        githubLink: "https://github.com/Dave1206/Memory-App",
     },
     {
         title: "My Portfolio",
         screenshots: [
-            "/images/project2-1.png",
-            "/images/project2-2.png",
+            "/projects/portfolioss1.png",
+            "/projects/portfolioss2.png",
         ],
-        overviewLink: "/projects/project-two",
+        description: `
+            A personal portfolio website showcasing my frontend development skills.
+            `,
+        features: [
+            `Built with Vite and React.`,
+            `Creative animations using Framer Motion.`,
+            `Responsive design with strong UX principles.`,
+            `Light and dark mode themes offer two unique designs.`,
+            `Deployed on Netlify for fast, reliable access.`,
+            `Graphic editing using GIMP for custom assets.`,
+            `Resume available in the forms of print, download, or google docs.`,
+        ],
         githubLink: "https://github.com/Dave1206/my-portfolio",
     },
 ];
@@ -27,7 +47,6 @@ const projectsData = [
 const carouselVariants = {
     initial: { opacity: 0, x: 100 },
     animate: { opacity: 1, x: 0 },
-    exit: { opacity: 0, x: -100 },
     transition: { duration: 0.5 },
 };
 
@@ -48,7 +67,7 @@ function ProjectItem({ project }) {
         <div className="project-item">
             <h3>{project.title}</h3>
             <div className="carousel">
-                <button className="arrow left" onClick={prevSlide}>&lt;</button>
+                <button className="arrow left" onClick={prevSlide}>&lsaquo;</button>
                 <div className="screenshot">
                     <AnimatePresence initial={false}>
                         <motion.img
@@ -58,17 +77,21 @@ function ProjectItem({ project }) {
                             variants={carouselVariants}
                             initial="initial"
                             animate="animate"
-                            exit="exit"
                             transition={{ duration: 0.5 }}
                         />
                     </AnimatePresence>
                 </div>
-                <button className="arrow right" onClick={nextSlide}>&gt;</button>
+                <button className="arrow right" onClick={nextSlide}>&rsaquo;</button>
+            </div>
+            <div className="project-overview">
+                <p>{project.description}</p>
+                <ul>
+                    {project.features.map((feature, index) => (
+                        <li key={`feature${index}`}>{feature}</li>
+                    ))}
+                </ul>
             </div>
             <div className="project-buttons">
-                <a href={project.overviewLink} className="overview-btn">
-                    Overview
-                </a>
                 <a
                     href={project.githubLink}
                     className="github-btn"

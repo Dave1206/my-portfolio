@@ -86,7 +86,7 @@ function App() {
                     variants={sectionVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true, amount: 0.5 }}
+                    viewport={{ once: true, amount: 0.25 }}
                   >
                     <Projects />
                   </motion.section>
@@ -106,7 +106,7 @@ function App() {
             </>
           } 
         />
-        <Route path="/resume" element={<><StickyNav isMobile={isMobile} /><Resume /></>} />
+        <Route path="/resume" element={<><StickyNav isMobile={isMobile} /> <Resume /></>} />
         <Route path="/thank-you" element={<><StickyNav isMobile={isMobile} /> <ThankYou /></>} />
       </Routes>
     </Router>

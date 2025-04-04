@@ -136,6 +136,7 @@
     .projects-list {
         display: flex;
         flex-direction: column;
+        gap: 10px;
     }
     .project-item{
         max-width: 80vw;

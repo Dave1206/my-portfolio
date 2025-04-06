@@ -2,71 +2,76 @@
     font-size: 2.5rem;
     margin-bottom: 2rem;
   }
-  
+
   .projects-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-}
-  
+  }
+
   .project-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 5px;
-    background: #fff;
+    background: var(--bg-color);
     border: 1px solid #ddd;
     border-radius: 8px;
     width: 400px;
     max-width: 30vw;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 1rem 3.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .project-overview {
     margin: 10px;
     padding: 10px;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: var(--bg-color);
+    color: var(--text-color);
     border-radius: 12px;
     line-height: 1.5;
     text-align: left;
-}
+  }
 
-.project-overview p {
-  color: #333;
-}
+  .project-overview p {
+    color: var(--text-color)
+  }
 
-.project-overview ul {
-  margin: 20px;
-}
-  
+  .project-overview ul {
+    margin: 20px;
+  }
+
   .project-item h3 {
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-color);
+    ;
   }
-  
+
   .carousel {
     position: relative;
     overflow: hidden;
     height: 200px;
     margin-bottom: 1rem;
   }
-  
+
   .screenshot {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 5px;
   }
-  
+
   .screenshot img {
     width: 100%;
     height: auto;
     object-fit: cover;
   }
-  
+
   .arrow {
     position: absolute;
     display: flex;
@@ -86,24 +91,24 @@
     z-index: 2;
   }
 
-  .arrow:hover{
+  .arrow:hover {
     background: rgba(0, 0, 0, 0.616);
   }
-  
+
   .arrow.left {
     left: 0px;
   }
-  
+
   .arrow.right {
     right: 0px;
   }
-  
+
   .project-buttons {
     display: flex;
     justify-content: center;
     gap: 1rem;
   }
-  
+
   .overview-btn,
   .github-btn {
     padding: 0.5rem 1rem;
@@ -111,7 +116,7 @@
     border-radius: 4px;
     color: #fff;
   }
-  
+
   .overview-btn {
     background: var(--accent-hover);
   }
@@ -119,26 +124,31 @@
   .overview-btn:hover {
     background: var(--accent-color);
   }
-  
+
   .github-btn {
     background: #555;
+    position: absolute;
+    bottom: 1rem;
   }
 
   .github-btn:hover {
     background: #333;
   }
-  
-  @media(max-width: 768px){
+
+  @media(max-width: 768px) {
     .projects {
-        min-height: fit-content;
-        padding-bottom: 50px;
+      min-height: fit-content;
+      padding-bottom: 50px;
     }
+
     .projects-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
     }
-    .project-item{
-        max-width: 80vw;
+
+    .project-item {
+      max-width: 80vw;
     }
   }

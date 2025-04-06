@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../styles/DayBackdrop.css';
 
 const STATIC_CLOUD_COUNT = 8;
-const ANIMATED_CLOUD_INTERVAL = 10000;
-const ANIMATED_CLOUD_DURATION = 120;
+const ANIMATED_CLOUD_INTERVAL = 30000;
+const ANIMATED_CLOUD_DURATION = 300;
 
 const StaticClouds = () => {
     const clouds = useMemo(() => {

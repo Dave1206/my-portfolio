@@ -20,6 +20,7 @@ const projectsData = [
             `Media uploads and processing with FFmpeg, Multer, and Sharp.`,
             `Data recommendations based on metadata tracking, including location.`,
         ],
+        liveLink: "https://memoryapp-d427aaf76968.herokuapp.com/login",
         githubLink: "https://github.com/Dave1206/Memory-App",
     },
     {
@@ -92,6 +93,16 @@ function ProjectItem({ project }) {
                 </ul>
             </div>
             <div className="project-buttons">
+                {project.liveLink && 
+                <a
+                    href={project.liveLink}
+                    className="liveview-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    Live View
+                </a>}
+                {project.githubLink &&
                 <a
                     href={project.githubLink}
                     className="github-btn"
@@ -99,7 +110,7 @@ function ProjectItem({ project }) {
                     rel="noopener noreferrer"
                 >
                     View Code
-                </a>
+                </a>}
             </div>
         </div>
     );

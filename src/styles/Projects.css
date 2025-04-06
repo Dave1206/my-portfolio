@@ -20,7 +20,7 @@
     border-radius: 8px;
     width: 400px;
     max-width: 30vw;
-    padding: 1rem 1rem 3.5rem;
+    padding: 1rem 1rem 5rem;
     box-shadow: 0 2px 4px var(--h3-color);
   }
 
@@ -104,31 +104,34 @@
   }
 
   .project-buttons {
+    position: absolute;
+    bottom: 1rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
+    width: 92%;
   }
 
-  .overview-btn,
+  .liveview-btn,
   .github-btn {
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 4px;
     color: #fff;
+    width: 110px;
   }
 
-  .overview-btn {
+  .liveview-btn {
     background: var(--accent-hover);
   }
 
-  .overview-btn:hover {
+  .liveview-btn:hover {
     background: var(--accent-color);
   }
 
   .github-btn {
     background: #555;
-    position: absolute;
-    bottom: 1rem;
   }
 
   .github-btn:hover {

@@ -189,7 +189,7 @@ const Resume = () => {
                             <div className="print-resume-project-item">
                                 <h3>Portfolio Website</h3>
                                 <p>
-                                    <a href="david-waddell.netlify.app" target="_blank" rel="noopener noreferrer">Live Demo</a> |
+                                    <a href="https://davidwaddell.dev" target="_blank" rel="noopener noreferrer">Live Demo</a> |
                                     <a href="https://github.com/Dave1206/my-portfolio" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
                                 </p>
                                 <ul>
